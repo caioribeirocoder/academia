@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="cabecalho-pagina">
+    <h2>Cadastrar Novo Aluno</h2>
+    <a href="/" class="btn-voltar">← Voltar</a>
+</div>
+
+<form action="/alunos/cadastrar" method="POST">
+
+    <div class="campo">
+        <label>Nome completo</label>
+        <input type="text" name="nome" placeholder="Digite o nome" required>
+    </div>
+
+    <div class="campo">
+        <label>CPF</label>
+        <input type="text" name="cpf" placeholder="000.000.000-00" required>
+    </div>
+
+    <div class="campo">
+        <label>Data de nascimento</label>
+        <input type="date" name="nascimento" required>
+    </div>
+
+    <div class="campo">
+        <label>Telefone</label>
+        <input type="text" name="telefone" placeholder="(00) 00000-0000" required>
+    </div>
+
+    <div class="campo">
+        <label>E-mail</label>
+        <input type="email" name="email" placeholder="email@exemplo.com" required>
+    </div>
+
+    <div class="campo">
+        <label>Endereço</label>
+        <input type="text" name="endereco" placeholder="Rua, número, bairro" required>
+    </div>
+
+    <div class="campo">
+        <label>Turma</label>
+        <select name="turma">
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noite">Noite</option>
+        </select>
+    </div>
+
+    <button type="submit">Cadastrar Aluno</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="cabecalho-pagina">
+    <h2>Alunos Cadastrados</h2>
+    <a href="/alunos/cadastrar" class="btn-cadastrar">+ Novo Aluno</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Turma</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for aluno in alunos %}
+        <tr>
+            <td>{{ aluno.id }}</td>
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.cpf }}</td>
+            <td>{{ aluno.telefone }}</td>
+            <td>{{ aluno.email }}</td>
+            <td>{{ aluno.turma }}</td>
+            <td>
+                <a href="#">Editar</a>
+                <a href="#">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

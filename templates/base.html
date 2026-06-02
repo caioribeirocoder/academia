@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Academia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Sistema de Academia</h1>
+        <ul>
+            <li><a href="/">Alunos</a></li>
+            <li><a href="#">Planos</a></li>
+            <li><a href="#">Funcionarios</a></li>
+            <li><a href="#">Pagamentos</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+</body>
+</html>
