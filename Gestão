@@ -1,0 +1,23 @@
+import pickle
+import os
+import re
+from datetime import datetime
+ARQUIVO_FUNCIONARIOS = os.path.join(os.path.dirname(__file__), "dados", "funcionarios.pkl")
+CARGOS = ["Gerente", "Funcionário", "Personal Trainer"]
+TIPOS_ACESSO = {
+    "Gerente": ["alunos", "pagamentos", "funcionarios", "planos"],
+    "Funcionário":  ["alunos", "pagamentos"],
+    "Personal Trainer": ["alunos"], 
+    }
+def carregar():
+    if os.path.exists(ARQUIVO_FUNCIONARIOS):
+        with open(ARQUIVO_FUNCIONARIOS, "rb") as f:
+            return pickle.load(f)
+        return {}
+def salvar(dados: dict):
+        os.makedirs(os.path.dirname(ARQUIVO_FUNCIONARIOS), exist_ok=True)
+with open(ARQUIVO_FUNCIONARIOS, "wb") as f:
+        pickle.dump(dados, f)
+        def proximo_id(dados: dict) -> int:
+            return max(dados.keys(), default=0) + 1
+        
